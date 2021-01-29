@@ -9,6 +9,18 @@ const darkTheme = createMuiTheme({
   palette: {
     type: 'dark',
   },
+  overrides: {
+    MuiFormLabel: {
+      root: {
+        '&$focused': {
+          color: '#47bdff',
+          fontWeight: 'bold',
+        },
+      },
+
+      focused: {},
+    },
+  },
 })
 
 ReactDOM.render(
