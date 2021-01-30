@@ -11,4 +11,4 @@ I have built a simple app to filter and view the reviews.  The reviews can be fi
  - run `npm i`
  - run `npm start` to run the dev server
  - run `npm test` to run the tests
- - run `npm build` to build the prod files and js bundle
+ - run `npm run build` to build the prod files and js bundle
