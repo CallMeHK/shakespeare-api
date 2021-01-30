@@ -1,7 +1,6 @@
 import * as React from 'react'
 import * as ReviewService from '../services/review.api'
 import { CustomerReview } from '../services/review.api'
-import * as R from 'ramda'
 import useFilteredReviews from '../hooks/useFilteredReviews'
 
 type FilterUtils = {

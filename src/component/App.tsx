@@ -5,6 +5,7 @@ import AppBar from './common/AppBar'
 import FilterCard from './filter/FilterCard'
 import ReviewTable from './table/ReviewTable'
 import { useReviewContext } from '../context/review.context'
+import CircularProgress from '@material-ui/core/CircularProgress'
 
 export const App: React.FC = () => {
   const data = useReviewContext()
@@ -14,7 +15,16 @@ export const App: React.FC = () => {
       <AppBar />
       <Container>
         <div className={spacerStyle} />
-        {data.isLoading && 'Loading.....'}
+        {data.isLoading && (
+          <div className={loadingStyle}>
+            <CircularProgress data-testId='loader' color="secondary" />
+          </div>
+        )}
+        {data.isError && (
+          <div className={loadingStyle}>
+            <p>Sorry! We cannot connect to the Shakespeare API at this time.</p>
+          </div>
+        )}
         {!data.isLoading && (
           <>
             <FilterCard />
@@ -29,4 +39,11 @@ export const App: React.FC = () => {
 
 const spacerStyle = css({
   height: 20,
+})
+
+const loadingStyle = css({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  height: '50vh',
 })
