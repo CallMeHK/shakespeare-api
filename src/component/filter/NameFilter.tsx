@@ -28,6 +28,7 @@ const NameFilter: React.FC = () => {
   const { filter } = useReviewContext()
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    event.persist()
     runWithTimeout(() => {
       event.target.value
         ? filter.name.set(buildSearchTextFilter(event.target.value))

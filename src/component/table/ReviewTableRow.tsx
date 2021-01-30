@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { css } from '@emotion/css'
 import Box from '@material-ui/core/Box'
 import Collapse from '@material-ui/core/Collapse'
@@ -9,7 +9,7 @@ import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp'
 import { CustomerReview } from '../../services/review.api'
 import ReviewSubTable from './ReviewSubTable'
-import {format} from 'date-fns'
+import { format } from 'date-fns'
 
 type IReviewTableRow = {
   review: CustomerReview
@@ -18,7 +18,7 @@ type IReviewTableRow = {
 const ReviewTableRow: React.FC<IReviewTableRow> = ({ review }) => {
   const [open, setOpen] = React.useState<boolean>(false)
 
-  const date = format(new Date(review.publish_date), 'MM/dd/yyyy' )
+  const date = format(new Date(review.publish_date), 'MM/dd/yyyy')
 
   return (
     <React.Fragment>
@@ -36,9 +36,11 @@ const ReviewTableRow: React.FC<IReviewTableRow> = ({ review }) => {
             )}
           </IconButton>
         </TableCell>
-        <TableCell>{review.author}</TableCell>
-        <TableCell align="right">{review.rating}</TableCell>
-        <TableCell align="right">{date}</TableCell>
+        <TableCell data-testid="author">{review.author}</TableCell>
+        <TableCell data-testid="rating" align="right">{review.rating}</TableCell>
+        <TableCell data-testid="publish_date" align="right">
+          {date}
+        </TableCell>
       </TableRow>
       <TableRow>
         <TableCell colSpan={6} style={{ paddingBottom: 0, paddingTop: 0 }}>

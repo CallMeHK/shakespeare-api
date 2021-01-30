@@ -65,4 +65,6 @@ const datePickerContainerStyle = css({
   flexWrap: 'wrap',
   padding: '5px 10px',
 })
+
+export { buildDateFilter }
 export default DateFilter

@@ -1,13 +1,10 @@
 import { Tooltip } from '@material-ui/core'
 import * as React from 'react'
-import * as R from 'ramda'
 import {
   ScatterChart,
   CartesianGrid,
   XAxis,
   YAxis,
-  ZAxis,
-  Legend,
   Scatter,
   ResponsiveContainer,
 } from 'recharts'

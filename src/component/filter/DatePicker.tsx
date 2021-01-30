@@ -16,7 +16,7 @@ const DatePicker: React.FC<IDatePicker> = ({ date, onChange, label }) => {
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
       <KeyboardDatePicker
         margin="normal"
-        id="date-picker-dialog"
+        id={'date-picker-dialog' + label}
         label={label}
         format="MM/dd/yyyy"
         value={date}

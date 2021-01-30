@@ -17,7 +17,7 @@ export const App: React.FC = () => {
         <div className={spacerStyle} />
         {data.isLoading && (
           <div className={loadingStyle}>
-            <CircularProgress data-testId='loader' color="secondary" />
+            <CircularProgress data-testid='loader' color="secondary" />
           </div>
         )}
         {data.isError && (

@@ -1,5 +1,4 @@
-import React from 'react'
-import { arrayOf } from 'prop-types'
+import * as React from 'react'
 import Card from '@material-ui/core/Card'
 import { css } from '@emotion/css'
 import CardContent from '@material-ui/core/CardContent'
