@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { css } from '@emotion/css'
 import TextField from '@material-ui/core/TextField'
 import { useReviewContext } from '../../context/review.context'
 import { CustomerReview } from '../../services/review.api'
@@ -34,10 +35,14 @@ const NameFilter: React.FC = () => {
     })
   }
   return (
-    <div>
+    <div className={nameFilterContainerStyle}>
       <TextField label="Author" onChange={onChange} />
     </div>
   )
 }
+
+const nameFilterContainerStyle = css({
+  padding: '5px 10px',
+})
 
 export default NameFilter

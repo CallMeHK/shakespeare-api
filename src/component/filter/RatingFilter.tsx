@@ -64,10 +64,11 @@ const selectSpacerStyle = css({
 const selectContainerStyle = css({
   display: 'flex',
   flexWrap: 'wrap',
+  padding: '5px 10px',
 })
 
 const selectStyle = {
-  minWidth: 150,
+  minWidth: 120,
 }
 
 export default RatingFilter

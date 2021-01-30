@@ -9,6 +9,7 @@ import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp'
 import { CustomerReview } from '../../services/review.api'
 import ReviewSubTable from './ReviewSubTable'
+import {format} from 'date-fns'
 
 type IReviewTableRow = {
   review: CustomerReview
@@ -17,8 +18,7 @@ type IReviewTableRow = {
 const ReviewTableRow: React.FC<IReviewTableRow> = ({ review }) => {
   const [open, setOpen] = React.useState<boolean>(false)
 
-  const dateObj = new Date(review.publish_date)
-  const date = `${dateObj.getMonth()}/${dateObj.getDate()}/${dateObj.getFullYear()}`
+  const date = format(new Date(review.publish_date), 'MM/dd/yyyy' )
 
   return (
     <React.Fragment>
